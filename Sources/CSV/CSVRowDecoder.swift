@@ -155,7 +155,7 @@ fileprivate final class CSVKeyedDecodingContainer<K: CodingKey>: KeyedDecodingCo
         if let index = key.intValue {
             return self.decoder.reader.currentRow![index]
         } else {
-            return self.decoder.reader[key.stringValue]!
+            return self.decoder.reader[key.stringValue] ?? ""
         }
     }
 
